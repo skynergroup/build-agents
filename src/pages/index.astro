@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build Agents | Tell us your problem, get the right AI solution</title>
+    <meta name="description" content="Describe your business problem in plain language. Build Agents recommends the best-fit automation solution, starting with Skylog for logistics operations." />
+    <link rel="canonical" href="https://build-agents.vercel.app/" />
+    <meta property="og:title" content="Build Agents" />
+    <meta property="og:description" content="Simple AI automation for everyday businesses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://build-agents.vercel.app/" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="brand">Build Agents</div>
+        <button class="btn btn-muted">Book demo</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">SIMPLE FOR EVERYDAY BUSINESSES</p>
+        <h1>Tell us your business problem. We suggest the right AI agent instantly.</h1>
+        <p>
+          Start with your challenge, not technical setup. If you run logistics, we recommend
+          <strong>Skylog</strong> first. Then we tailor a practical automation flow for your team.
+        </p>
+        <div class="cta-row">
+          <button class="btn btn-primary">Describe My Problem</button>
+          <button class="btn btn-muted">See How It Works</button>
+        </div>
+      </section>
+
+      <section class="problem-flow" aria-label="Problem to solution flow">
+        <article>
+          <h3>1) Explain your issue</h3>
+          <p>“I own a trucking company and dispatch is chaotic.”</p>
+        </article>
+        <article>
+          <h3>2) Get best-fit recommendation</h3>
+          <p>We suggest Skylog where it delivers the fastest operational impact.</p>
+        </article>
+        <article>
+          <h3>3) Launch tailored automation</h3>
+          <p>Your bot is configured for your workflow, with clear human handoff rules.</p>
+        </article>
+      </section>
+
+      <section class="stage" aria-label="Interactive bot characters">
+        <div class="stage-head">Move your cursor — the bot characters respond dynamically.</div>
+        <div class="bot-scene" id="bot-scene">
+          <article class="bot-card" id="bot-a" data-depth="26">
+            <img src="/bots/skybot-alpha.svg" alt="Skybot Alpha, operations assistant bot" />
+            <h4>Skybot Alpha</h4>
+            <p>Built for dispatch flow, job updates, and daily operations coordination.</p>
+          </article>
+
+          <article class="bot-card" id="bot-b" data-depth="38">
+            <img src="/bots/skybot-orbit.svg" alt="Skybot Orbit, customer communication bot" />
+            <h4>Skybot Orbit</h4>
+            <p>Handles customer updates, lead qualification, and smart escalation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="footer-cta">
+        <h2>From problem to production in under a week.</h2>
+        <p>Clear recommendations. Practical setup. SEO-fast website experience.</p>
+        <button class="btn btn-primary">Start with Your Problem</button>
+      </section>
+    </main>
+
+    <script>
+      const scene = document.getElementById('bot-scene');
+      const cards = Array.from(document.querySelectorAll('.bot-card'));
+      if (scene && cards.length) {
+        scene.addEventListener('pointermove', (event) => {
+          const rect = scene.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+          cards.forEach((card) => {
+            const depth = Number(card.dataset.depth || 24);
+            const tx = x * depth;
+            const ty = y * depth;
+            card.style.transform = `translate(${tx}px, ${ty}px) rotateY(${x * 7}deg) rotateX(${y * -7}deg)`;
+          });
+        });
+
+        scene.addEventListener('pointerleave', () => {
+          cards.forEach((card) => {
+            card.style.transform = 'translate(0px, 0px) rotateY(0deg) rotateX(0deg)';
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
