@@ -1,134 +1,83 @@
-const steps = [
-  {
-    title: 'Describe your workflow',
-    body: 'Tell Build Agents what you want done, in plain language.',
-  },
-  {
-    title: 'Confirm boundaries',
-    body: 'Set tone, permissions, and handoff rules with simple controls.',
-  },
-  {
-    title: 'Test and launch',
-    body: 'Preview real conversations, then deploy when ready.',
-  },
-];
+function BotIcon() {
+  return (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <rect x="8" y="14" width="56" height="46" rx="14" fill="url(#bg)" />
+      <rect x="24" y="6" width="24" height="10" rx="5" fill="#1D4ED8" />
+      <circle cx="27" cy="36" r="6" fill="#E2E8F0" />
+      <circle cx="45" cy="36" r="6" fill="#E2E8F0" />
+      <rect x="24" y="48" width="24" height="4" rx="2" fill="#C7D2FE" />
+      <defs>
+        <linearGradient id="bg" x1="8" y1="14" x2="64" y2="60" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#2563EB" />
+          <stop offset="1" stopColor="#06B6D4" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
 
-const useCases = [
-  'Customer support',
-  'Lead qualification',
-  'Team knowledge assistant',
-  'Booking and reminders',
-  'Operations follow-ups',
-  'Personal admin',
-];
-
-const faqs = [
-  {
-    q: 'Do I need to code?',
-    a: 'No. Everything is configured through guided chat and simple options.',
-  },
-  {
-    q: 'Can I control what the agent can do?',
-    a: 'Yes. You decide capabilities, limits, and when to hand off to a human.',
-  },
-  {
-    q: 'How long does setup take?',
-    a: 'Most teams launch their first agent in under 10 minutes.',
-  },
+const cards = [
+  ['Support Bot', 'Answers FAQs, captures issues, routes to human support.'],
+  ['Sales Bot', 'Qualifies leads and books calls automatically.'],
+  ['Ops Bot', 'Runs reminders, follow-ups, and status checks.'],
 ];
 
 export default function HomePage() {
   return (
-    <main>
-      <header className="nav-wrap">
-        <nav className="container nav">
-          <div className="logo">Build Agents</div>
-          <div className="nav-actions">
-            <a href="#how">How it works</a>
-            <a href="#faq">FAQ</a>
-            <button className="btn btn-dark">Build my agent</button>
+    <main className="site">
+      <header className="topbar">
+        <div className="container topbar-inner">
+          <div className="brand">
+            <BotIcon />
+            <div>
+              <strong>Build Agents</strong>
+              <span>AI workers for African SMEs</span>
+            </div>
           </div>
-        </nav>
+          <button className="btn btn-dark">Start Building</button>
+        </div>
       </header>
 
       <section className="hero container">
-        <p className="eyebrow">No-code AI for everyday teams</p>
-        <h1>Build AI agents by describing what you need.</h1>
-        <p className="hero-sub">
-          No complex setup. No engineering bottlenecks. Just explain the task and
-          launch a reliable agent in minutes.
+        <p className="tag">NO-CODE • BOT-FIRST • SME READY</p>
+        <h1>Launch your business bot in minutes.</h1>
+        <p>
+          Build Agents helps non-technical teams create customer-ready AI bots with simple prompts,
+          guardrails, and one-click deployment.
         </p>
         <div className="hero-actions">
-          <button className="btn btn-dark">Build my agent</button>
-          <button className="btn btn-light">See live example</button>
+          <button className="btn btn-dark">Build My Bot</button>
+          <button className="btn btn-light">See Demo</button>
         </div>
+      </section>
 
-        <div className="hero-panel">
-          <div className="panel-row">
-            <span className="dot" />
-            <span className="dot" />
-            <span className="dot" />
+      <section className="container showcase">
+        <div className="chat-demo">
+          <h3>Live Bot Preview</h3>
+          <div className="bubble user">Need a bot to answer pricing questions.</div>
+          <div className="bubble ai">Done. Should I escalate enterprise leads to your sales team?</div>
+          <div className="bubble user">Yes, and collect name, email and company.</div>
+          <div className="chips">
+            <span>WhatsApp Ready</span>
+            <span>Human Handoff</span>
+            <span>Analytics Included</span>
           </div>
-          <h3>Agent setup preview</h3>
-          <div className="chat user">I need an assistant to answer product FAQs.</div>
-          <div className="chat ai">Great. Should it escalate billing issues to humans?</div>
-          <div className="chat user">Yes, and capture lead details automatically.</div>
         </div>
       </section>
 
-      <section id="how" className="section container">
-        <h2>From idea to live agent in three steps</h2>
-        <div className="grid three">
-          {steps.map((step, index) => (
-            <article className="card" key={step.title}>
-              <p className="step">Step {index + 1}</p>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-soft">
-        <div className="container split">
-          <div>
-            <h2>Designed for non-technical users</h2>
-            <p className="muted">
-              Start with a proven template, then tailor behavior through conversation.
-              You stay in control with clear permissions and testing before launch.
-            </p>
-            <ul className="list">
-              {useCases.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <aside className="summary">
-            <h3>Example configuration</h3>
-            <p><strong>Agent:</strong> Support Assistant</p>
-            <p><strong>Tone:</strong> Clear, professional</p>
-            <p><strong>Allowed:</strong> FAQs, ticket capture, routing</p>
-            <p><strong>Blocked:</strong> Refund approvals without human review</p>
-          </aside>
-        </div>
-      </section>
-
-      <section id="faq" className="section container">
-        <h2>Frequently asked questions</h2>
-        <div className="grid">
-          {faqs.map((item) => (
-            <article className="faq" key={item.q}>
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
-            </article>
-          ))}
-        </div>
+      <section className="container grid3">
+        {cards.map(([title, text]) => (
+          <article className="feature" key={title}>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
       </section>
 
       <section className="container cta">
-        <h2>Your first agent can be live today.</h2>
-        <p>If you can describe it, you can build it.</p>
-        <button className="btn btn-dark">Build my agent</button>
+        <h2>Ready to scale your business with bots?</h2>
+        <p>Pick a template, customize in chat, and go live today.</p>
+        <button className="btn btn-dark">Start Building</button>
       </section>
     </main>
   );
