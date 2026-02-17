@@ -1,32 +1,48 @@
 # build-agents
 
-A production-ready **Next.js landing site** for Build Agents — a no-code AI agent builder for non-technical users.
+Production-ready **Astro landing site** for Build Agents.
 
 ## Stack
-- Next.js (App Router)
-- TypeScript
+- Astro (static output)
 - CSS (custom, responsive)
-- GitHub Actions (auto deploy to GitHub Pages)
+- Vercel deployment
 
 ## Local development
 ```bash
 npm install
 npm run dev
 ```
-Open: <http://localhost:3000>
+Open: <http://localhost:4321>
 
 ## Production build
 ```bash
 npm run build
 ```
-This generates a static export in `out/`.
+Output directory: `dist/`
 
-## Deployment
-Deployment is automated via GitHub Actions workflow:
-- `.github/workflows/deploy-pages.yml`
+## ngrok (local sharing + webhook testing)
+Use ngrok to expose local dev safely for quick demos and integration tests.
 
-Expected Pages URL:
-- `https://skynergroup.github.io/build-agents/`
+### 1) Run the app
+```bash
+npm run dev -- --host 0.0.0.0 --port 4321
+```
 
-If Pages is not enabled yet in repo settings, enable:
-- **Settings → Pages → Build and deployment → Source: GitHub Actions**
+### 2) Start ngrok tunnel
+```bash
+ngrok http 4321
+```
+
+### 3) Use the HTTPS forwarding URL
+Example:
+- `https://<random>.ngrok-free.app`
+
+Use this URL for:
+- remote UI review
+- webhook callback testing
+- temporary integration demos
+
+## Notes
+- Use **ngrok for development/testing**, not production.
+- Use **Vercel** for preview + production deployments.
+- Free ngrok URLs rotate unless you reserve a domain.
