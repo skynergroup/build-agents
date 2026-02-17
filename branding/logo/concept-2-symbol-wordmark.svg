@@ -1,0 +1,15 @@
+<svg width="1400" height="500" viewBox="0 0 1400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="80" y1="80" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="500" rx="28" fill="#FFFFFF"/>
+  <rect x="72" y="82" width="250" height="250" rx="62" fill="#0B1220"/>
+  <path d="M130 220V154C130 134.1 146.1 118 166 118H232" stroke="url(#g)" stroke-width="20" stroke-linecap="round"/>
+  <path d="M264 154V220C264 239.9 247.9 256 228 256H162" stroke="#E2E8F0" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="197" cy="187" r="16" fill="url(#g)"/>
+  <text x="368" y="212" fill="#0B1220" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="750" letter-spacing="-2">Build Agents</text>
+  <text x="372" y="280" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500">SME-ready AI workers</text>
+</svg>
