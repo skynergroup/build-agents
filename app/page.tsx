@@ -1,114 +1,87 @@
-const templates = [
-  'Lead Qualification Agent',
-  'Customer Support Agent',
-  'Appointment & Reminder Agent',
-  'Internal FAQ Agent',
-  'Operations Follow-up Agent',
-  'Personal Admin Agent',
-];
-
 const steps = [
   {
-    title: 'Describe the job',
-    body: 'Tell us in plain language what your agent should handle.',
+    title: 'Describe your workflow',
+    body: 'Tell Build Agents what you want done, in plain language.',
   },
   {
-    title: 'Set guardrails',
-    body: 'Choose clear permissions and behavior in simple terms.',
+    title: 'Confirm boundaries',
+    body: 'Set tone, permissions, and handoff rules with simple controls.',
   },
   {
-    title: 'Test and deploy',
-    body: 'Preview conversations, refine quickly, then launch.',
+    title: 'Test and launch',
+    body: 'Preview real conversations, then deploy when ready.',
   },
 ];
 
-const metrics = [
-  { label: 'Time to first deploy', value: '< 10 min' },
-  { label: 'No-code setup', value: '100%' },
-  { label: 'Template starts', value: '6+' },
+const useCases = [
+  'Customer support',
+  'Lead qualification',
+  'Team knowledge assistant',
+  'Booking and reminders',
+  'Operations follow-ups',
+  'Personal admin',
 ];
 
-const testimonials = [
+const faqs = [
   {
-    quote:
-      'We launched our support agent in one afternoon. The setup felt like chatting with a consultant.',
-    name: 'Leah M.',
-    role: 'Operations Lead',
+    q: 'Do I need to code?',
+    a: 'No. Everything is configured through guided chat and simple options.',
   },
   {
-    quote:
-      'Finally a builder my team can use without waiting for engineering every time.',
-    name: 'Hussein K.',
-    role: 'Customer Success Manager',
+    q: 'Can I control what the agent can do?',
+    a: 'Yes. You decide capabilities, limits, and when to hand off to a human.',
   },
   {
-    quote:
-      'The guardrails are clear. We knew exactly what the agent can and cannot do before going live.',
-    name: 'Anele P.',
-    role: 'Founder',
+    q: 'How long does setup take?',
+    a: 'Most teams launch their first agent in under 10 minutes.',
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="page">
-      <div className="aurora aurora-1" />
-      <div className="aurora aurora-2" />
-      <div className="grid-overlay" />
-
-      <header className="container nav">
-        <div className="logo">Build Agents</div>
-        <button className="btn ghost">See examples</button>
+    <main>
+      <header className="nav-wrap">
+        <nav className="container nav">
+          <div className="logo">Build Agents</div>
+          <div className="nav-actions">
+            <a href="#how">How it works</a>
+            <a href="#faq">FAQ</a>
+            <button className="btn btn-dark">Build my agent</button>
+          </div>
+        </nav>
       </header>
 
-      <section className="container hero hero-split">
-        <div className="hero-copy">
-          <div className="badge">Built for non-technical teams</div>
-          <h1>Build AI agents by describing what you need.</h1>
-          <p>
-            No coding. No setup headaches. Just explain the task and launch a reliable
-            assistant in minutes.
-          </p>
-          <div className="actions">
-            <button className="btn primary">Build my agent</button>
-            <button className="btn ghost">Watch 60-second demo</button>
-          </div>
-
-          <div className="metrics">
-            {metrics.map((item) => (
-              <article key={item.label} className="metric">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </article>
-            ))}
-          </div>
+      <section className="hero container">
+        <p className="eyebrow">No-code AI for everyday teams</p>
+        <h1>Build AI agents by describing what you need.</h1>
+        <p className="hero-sub">
+          No complex setup. No engineering bottlenecks. Just explain the task and
+          launch a reliable agent in minutes.
+        </p>
+        <div className="hero-actions">
+          <button className="btn btn-dark">Build my agent</button>
+          <button className="btn btn-light">See live example</button>
         </div>
 
-        <aside className="hero-preview glass">
-          <div className="preview-top">
+        <div className="hero-panel">
+          <div className="panel-row">
             <span className="dot" />
             <span className="dot" />
             <span className="dot" />
           </div>
-          <h3>Agent Builder</h3>
-          <p className="preview-label">Conversation setup</p>
-          <div className="chat-line user">I need an assistant to qualify inbound leads.</div>
-          <div className="chat-line ai">Great. Should it score leads and book demos?</div>
-          <div className="chat-line user">Yes, and escalate enterprise leads to a human.</div>
-          <div className="chips">
-            <span>✅ Handoff enabled</span>
-            <span>✅ CRM capture</span>
-            <span>✅ Safe defaults</span>
-          </div>
-        </aside>
+          <h3>Agent setup preview</h3>
+          <div className="chat user">I need an assistant to answer product FAQs.</div>
+          <div className="chat ai">Great. Should it escalate billing issues to humans?</div>
+          <div className="chat user">Yes, and capture lead details automatically.</div>
+        </div>
       </section>
 
-      <section className="container section">
-        <h2>From idea to live agent in 3 steps</h2>
+      <section id="how" className="section container">
+        <h2>From idea to live agent in three steps</h2>
         <div className="grid three">
-          {steps.map((step, idx) => (
-            <article key={step.title} className="card glass soft-lift">
-              <small>Step {idx + 1}</small>
+          {steps.map((step, index) => (
+            <article className="card" key={step.title}>
+              <p className="step">Step {index + 1}</p>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
             </article>
@@ -116,67 +89,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container section">
-        <h2>Start from a template, then customize in chat</h2>
-        <div className="grid three">
-          {templates.map((template) => (
-            <article key={template} className="card template glass soft-lift">
-              <h3>{template}</h3>
-              <p>Pre-built prompt, guardrails, and onboarding flow.</p>
-              <a href="#" aria-label={`Use ${template}`}>
-                Use template →
-              </a>
+      <section className="section section-soft">
+        <div className="container split">
+          <div>
+            <h2>Designed for non-technical users</h2>
+            <p className="muted">
+              Start with a proven template, then tailor behavior through conversation.
+              You stay in control with clear permissions and testing before launch.
+            </p>
+            <ul className="list">
+              {useCases.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <aside className="summary">
+            <h3>Example configuration</h3>
+            <p><strong>Agent:</strong> Support Assistant</p>
+            <p><strong>Tone:</strong> Clear, professional</p>
+            <p><strong>Allowed:</strong> FAQs, ticket capture, routing</p>
+            <p><strong>Blocked:</strong> Refund approvals without human review</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="faq" className="section container">
+        <h2>Frequently asked questions</h2>
+        <div className="grid">
+          {faqs.map((item) => (
+            <article className="faq" key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="container section split">
-        <div>
-          <h2>You stay in control</h2>
-          <ul>
-            <li>Clear permissions in plain English</li>
-            <li>Confidence thresholds and handoff rules</li>
-            <li>Mandatory test mode before launch</li>
-            <li>Editable behavior after deployment</li>
-          </ul>
-        </div>
-        <aside className="panel glass">
-          <h3>Example setup summary</h3>
-          <p>
-            <strong>Agent:</strong> Support Assistant
-          </p>
-          <p>
-            <strong>Tone:</strong> Professional, concise
-          </p>
-          <p>
-            <strong>Can do:</strong> Answer FAQs, collect ticket details
-          </p>
-          <p>
-            <strong>Cannot do:</strong> Process refunds without approval
-          </p>
-        </aside>
-      </section>
-
-      <section className="container section">
-        <h2>Teams already shipping with Build Agents</h2>
-        <div className="grid three">
-          {testimonials.map((item) => (
-            <article key={item.name} className="card glass soft-lift">
-              <p>“{item.quote}”</p>
-              <div className="person">
-                <strong>{item.name}</strong>
-                <span>{item.role}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container cta glass">
+      <section className="container cta">
         <h2>Your first agent can be live today.</h2>
         <p>If you can describe it, you can build it.</p>
-        <button className="btn primary">Build my agent</button>
+        <button className="btn btn-dark">Build my agent</button>
       </section>
     </main>
   );
