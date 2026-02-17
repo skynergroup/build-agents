@@ -14,7 +14,11 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
+      - name: Require OpenAI key for CodeRabbit
+        run: test -n "${{ secrets.OPENAI_API_KEY }}"
+
       - name: CodeRabbit AI Review
         uses: coderabbitai/ai-pr-reviewer@latest
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
