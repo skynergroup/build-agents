@@ -1,0 +1,15 @@
+<svg width="520" height="560" viewBox="0 0 520 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="98" y1="60" x2="334" y2="296" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect x="98" y="60" width="324" height="324" rx="76" fill="#0B1020"/>
+  <path d="M168 265V177C168 152.7 187.7 133 212 133H300" stroke="url(#g1)" stroke-width="24" stroke-linecap="round"/>
+  <path d="M352 177V265C352 289.3 332.3 309 308 309H220" stroke="#E2E8F0" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="260" cy="221" r="20" fill="url(#g1)"/>
+
+  <text x="260" y="470" text-anchor="middle" fill="#0B1020" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1">Build</text>
+  <text x="260" y="536" text-anchor="middle" fill="#0B1020" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1">Agents</text>
+</svg>

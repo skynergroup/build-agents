@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#111A33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="72" y="120" fill="#93C5FD" font-family="Inter, Arial" font-size="34" font-weight="600">Build Agents</text>
+  <text x="72" y="250" fill="#F8FAFC" font-family="Inter, Arial" font-size="78" font-weight="700" letter-spacing="-1.2">Build AI agents by describing</text>
+  <text x="72" y="340" fill="#F8FAFC" font-family="Inter, Arial" font-size="78" font-weight="700" letter-spacing="-1.2">what you need.</text>
+  <text x="72" y="430" fill="#CBD5E1" font-family="Inter, Arial" font-size="34" font-weight="500">No coding. Just explain the task and deploy.</text>
+  <text x="72" y="560" fill="#94A3B8" font-family="Inter, Arial" font-size="28">build-agents.vercel.app</text>
+</svg>

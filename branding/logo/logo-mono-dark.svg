@@ -1,0 +1,7 @@
+<svg width="920" height="220" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="176" height="176" rx="44" fill="#0B1020"/>
+  <path d="M54 129V79C54 65.2 65.2 54 79 54H129" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <path d="M154 79V129C154 142.8 142.8 154 129 154H79" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="104" cy="104" r="12" fill="#FFFFFF"/>
+  <text x="230" y="118" fill="#0B1020" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-1.2">Build Agents</text>
+</svg>

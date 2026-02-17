@@ -1,0 +1,19 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1080" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#111A33"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="160" y1="680" x2="760" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <text x="80" y="120" fill="#93C5FD" font-family="Inter, Arial" font-size="42" font-weight="600">Build Agents</text>
+  <text x="80" y="310" fill="#F8FAFC" font-family="Inter, Arial" font-size="92" font-weight="700" letter-spacing="-1.5">Build AI agents</text>
+  <text x="80" y="420" fill="#F8FAFC" font-family="Inter, Arial" font-size="92" font-weight="700" letter-spacing="-1.5">in plain English.</text>
+  <text x="80" y="530" fill="#CBD5E1" font-family="Inter, Arial" font-size="42" font-weight="500">No code. Just describe the job.</text>
+  <rect x="80" y="660" width="430" height="110" rx="55" fill="url(#ac)"/>
+  <text x="295" y="732" text-anchor="middle" fill="#051022" font-family="Inter, Arial" font-size="38" font-weight="700">Build my agent</text>
+</svg>
