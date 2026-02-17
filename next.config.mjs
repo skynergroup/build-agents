@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? '/build-agents' : '',
+  // Only needed for GitHub Pages project sites, not Vercel.
+  basePath: isGitHubPages ? '/build-agents' : '',
 };
 
 export default nextConfig;
