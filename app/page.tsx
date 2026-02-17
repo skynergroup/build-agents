@@ -28,44 +28,86 @@ const metrics = [
   { label: 'Template starts', value: '6+' },
 ];
 
+const testimonials = [
+  {
+    quote:
+      'We launched our support agent in one afternoon. The setup felt like chatting with a consultant.',
+    name: 'Leah M.',
+    role: 'Operations Lead',
+  },
+  {
+    quote:
+      'Finally a builder my team can use without waiting for engineering every time.',
+    name: 'Hussein K.',
+    role: 'Customer Success Manager',
+  },
+  {
+    quote:
+      'The guardrails are clear. We knew exactly what the agent can and cannot do before going live.',
+    name: 'Anele P.',
+    role: 'Founder',
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="page">
       <div className="aurora aurora-1" />
       <div className="aurora aurora-2" />
+      <div className="grid-overlay" />
 
       <header className="container nav">
         <div className="logo">Build Agents</div>
         <button className="btn ghost">See examples</button>
       </header>
 
-      <section className="container hero">
-        <div className="badge">Built for non-technical teams</div>
-        <h1>Build AI agents by describing what you need.</h1>
-        <p>
-          No coding. No setup headaches. Just explain the task and launch a reliable
-          assistant in minutes.
-        </p>
-        <div className="actions">
-          <button className="btn primary">Build my agent</button>
-          <button className="btn ghost">Watch 60-second demo</button>
+      <section className="container hero hero-split">
+        <div className="hero-copy">
+          <div className="badge">Built for non-technical teams</div>
+          <h1>Build AI agents by describing what you need.</h1>
+          <p>
+            No coding. No setup headaches. Just explain the task and launch a reliable
+            assistant in minutes.
+          </p>
+          <div className="actions">
+            <button className="btn primary">Build my agent</button>
+            <button className="btn ghost">Watch 60-second demo</button>
+          </div>
+
+          <div className="metrics">
+            {metrics.map((item) => (
+              <article key={item.label} className="metric">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </article>
+            ))}
+          </div>
         </div>
 
-        <div className="metrics">
-          {metrics.map((item) => (
-            <article key={item.label} className="metric">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </article>
-          ))}
-        </div>
+        <aside className="hero-preview glass">
+          <div className="preview-top">
+            <span className="dot" />
+            <span className="dot" />
+            <span className="dot" />
+          </div>
+          <h3>Agent Builder</h3>
+          <p className="preview-label">Conversation setup</p>
+          <div className="chat-line user">I need an assistant to qualify inbound leads.</div>
+          <div className="chat-line ai">Great. Should it score leads and book demos?</div>
+          <div className="chat-line user">Yes, and escalate enterprise leads to a human.</div>
+          <div className="chips">
+            <span>✅ Handoff enabled</span>
+            <span>✅ CRM capture</span>
+            <span>✅ Safe defaults</span>
+          </div>
+        </aside>
       </section>
 
       <section className="container section">
         <h2>From idea to live agent in 3 steps</h2>
         <div className="grid three">
           {steps.map((step, idx) => (
-            <article key={step.title} className="card">
+            <article key={step.title} className="card glass soft-lift">
               <small>Step {idx + 1}</small>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
@@ -78,7 +120,7 @@ export default function HomePage() {
         <h2>Start from a template, then customize in chat</h2>
         <div className="grid three">
           {templates.map((template) => (
-            <article key={template} className="card template">
+            <article key={template} className="card template glass soft-lift">
               <h3>{template}</h3>
               <p>Pre-built prompt, guardrails, and onboarding flow.</p>
               <a href="#" aria-label={`Use ${template}`}>
@@ -99,7 +141,7 @@ export default function HomePage() {
             <li>Editable behavior after deployment</li>
           </ul>
         </div>
-        <aside className="panel">
+        <aside className="panel glass">
           <h3>Example setup summary</h3>
           <p>
             <strong>Agent:</strong> Support Assistant
@@ -116,7 +158,22 @@ export default function HomePage() {
         </aside>
       </section>
 
-      <section className="container cta">
+      <section className="container section">
+        <h2>Teams already shipping with Build Agents</h2>
+        <div className="grid three">
+          {testimonials.map((item) => (
+            <article key={item.name} className="card glass soft-lift">
+              <p>“{item.quote}”</p>
+              <div className="person">
+                <strong>{item.name}</strong>
+                <span>{item.role}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container cta glass">
         <h2>Your first agent can be live today.</h2>
         <p>If you can describe it, you can build it.</p>
         <button className="btn primary">Build my agent</button>
